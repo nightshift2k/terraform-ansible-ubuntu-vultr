@@ -19,4 +19,5 @@ output "instance_user" {
 output "instance_user_password" {
   description = "instance(s) user password" 
   value = random_password.instance_user_password.result
+  sensitive = true
 }
