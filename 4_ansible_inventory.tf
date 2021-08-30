@@ -3,10 +3,10 @@ resource "local_file" "hosts_cfg" {
   content = templatefile("${path.module}/templates/hosts.tpl",
   {
     instances = zipmap(
-        flatten(list(
+        flatten(tolist(
             vultr_instance.instance.*.hostname,
         )),
-        flatten(list(
+        flatten(tolist(
             vultr_instance.instance.*.main_ip,
         )),
     )
