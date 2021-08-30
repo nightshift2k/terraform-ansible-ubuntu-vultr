@@ -2,10 +2,10 @@ output "virtual_machine_default_ips" {
   description = "The default IP address of each instance deployed, indexed by name."
 
   value = zipmap(
-    flatten(list(
+    flatten(tolist(
       vultr_instance.instance.*.hostname,
     )),
-    flatten(list(
+    flatten(tolist(
       vultr_instance.instance.*.main_ip,
     )),
   )
