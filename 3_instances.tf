@@ -9,7 +9,8 @@ resource "vultr_instance" "instance" {
   count                 = var.instance_count
   plan                  = var.vultr_instance_plan
   region                = var.vultr_instance_region
-  os_id                 = var.vultr_instance_os_id
+  # os_id                 = var.vultr_instance_os_id
+  app_id                = var.vultr_instance_app_id
   label                 = "${var.instance_prefix}${format("%02d", count.index + 1)}"
   hostname              = "${var.instance_prefix}${format("%02d", count.index + 1)}"
   tag                   = var.instance_prefix
