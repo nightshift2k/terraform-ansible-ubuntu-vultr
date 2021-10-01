@@ -12,7 +12,7 @@
 *.tfvars
 
 # generated outputs (sensitive content)
-output
+ansible/
 
 # Logs
 *.log

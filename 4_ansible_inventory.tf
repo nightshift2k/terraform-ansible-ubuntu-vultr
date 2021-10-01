@@ -14,6 +14,6 @@ resource "local_file" "hosts_cfg" {
     ansible_user_password = random_password.instance_user_password.result
     ansible_ssh_private_key_file = local_file.instance_user_key.filename
   })
-  filename = "${abspath(path.root)}/output/hosts.cfg"
+  filename = "${abspath(path.root)}/ansible/hosts.cfg"
   file_permission = "0600"
 }
