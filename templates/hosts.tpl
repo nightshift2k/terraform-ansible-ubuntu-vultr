@@ -1,5 +1,5 @@
-[instances]
 %{ for name, ip in instances ~}
+[${replace(name, "-","_")}]
 ${name} ansible_host=${ip}
 %{ endfor ~}
 
