@@ -12,7 +12,7 @@
 *.tfvars
 
 # generated outputs (sensitive content)
-output
+ansible/
 
 # Logs
 *.log
@@ -22,3 +22,4 @@ output
 
 # Ignored vscode files
 .vscode/
+/kubeconfig

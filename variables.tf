@@ -24,6 +24,13 @@ variable "vultr_instance_os_id" {
   default = "387" # Ubuntu 20.04 x64
 }
 
+# see https://api.vultr.com/v2/applications
+variable "vultr_instance_app_id" {
+  description = "numeric ID of the desired applications flavor"
+  default = "37" # Docker on Ubuntun 20.04
+}
+
+
 # Name of the user account created
 variable "instance_user" {
   description = "user to be created inside the instance"
@@ -36,8 +43,9 @@ variable "instance_prefix" {
   default = "myvps"
 }
 
-# Amount of instances 
-variable "instance_count" {
-  description = "amount of instances to create"
-  default = "1"
-}
+# Amount of instances
+
+ variable "bot_count" {
+   description = "amount of instances to create for bots"
+   default = 1
+ }

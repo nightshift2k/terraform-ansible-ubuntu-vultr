@@ -1,22 +1,27 @@
-output "virtual_machine_default_ips" {
-  description = "The default IP address of each instance deployed, indexed by name."
+output "k3s_master" {
 
+  description = "The default IP address of the k3s controller."
+  value = tomap( { "${vultr_instance.k3s_master_instance.hostname}" = vultr_instance.k3s_master_instance.main_ip })
+}
+output "k3s_nodes" {
+  description = "The default IP address of each node deployed, indexed by name."
   value = zipmap(
-    flatten(list(
+    flatten(tolist(
       vultr_instance.instance.*.hostname,
     )),
-    flatten(list(
+    flatten(tolist(
       vultr_instance.instance.*.main_ip,
     )),
   )
 }
 
 output "instance_user" {
-  description = "instance(s) user login" 
+  description = "instance(s) user login"
   value = var.instance_user
 }
 
-output "insance_user_password" {
-  description = "instance(s) user password" 
+output "instance_user_password" {
+  description = "instance(s) user password"
   value = random_password.instance_user_password.result
+  sensitive = true
 }

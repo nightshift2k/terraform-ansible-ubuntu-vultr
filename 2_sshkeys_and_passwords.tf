@@ -10,14 +10,14 @@ resource "tls_private_key" "instance_user_tls_key" {
 
 resource "local_file" "root_key" {
   content = tls_private_key.root_tls_key.private_key_pem
-  filename ="${abspath(path.root)}/output/root_key"
+  filename ="${abspath(path.root)}/ansible/root_key"
   file_permission = "0600"
 }
 
 
 resource "local_file" "instance_user_key" {
   content = tls_private_key.instance_user_tls_key.private_key_pem
-  filename ="${abspath(path.root)}/output/${var.instance_user}_key"
+  filename ="${abspath(path.root)}/ansible/${var.instance_user}_key"
   file_permission = "0600"
 }
 
