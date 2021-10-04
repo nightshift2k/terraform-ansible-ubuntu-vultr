@@ -44,7 +44,8 @@ variable "instance_prefix" {
 }
 
 # Amount of instances
-variable "instance_count" {
-  description = "amount of instances to create"
-  default = "1"
-}
+
+ variable "bot_count" {
+   description = "amount of instances to create for bots"
+   default = 1
+ }

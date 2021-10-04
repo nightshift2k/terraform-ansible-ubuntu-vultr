@@ -5,7 +5,7 @@ vultr_api_key = "your-api-key-for-vultr"
 vultr_instance_region = "nrt"
 vultr_instance_plan = "vhf-2c-2gb"
 vultr_instance_os_id = 387
-instance_count = 1
+bot_count = 1
 instance_prefix = "myvps"
 
 # login
