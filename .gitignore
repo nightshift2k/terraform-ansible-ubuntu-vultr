@@ -22,3 +22,4 @@ ansible/
 
 # Ignored vscode files
 .vscode/
+/kubeconfig
