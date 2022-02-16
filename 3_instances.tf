@@ -35,7 +35,7 @@ resource "vultr_instance" "instance" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/script.sh",
-    "/tmp/script.sh '${var.instance_user}' '${chomp(tls_private_key.instance_user_tls_key.public_key_openssh)}' '${random_password.instance_user_password.result}'", ]
+    "/tmp/script.sh '${var.instance_user}' '${chomp(data.local_file.instance_user_key.content)}' '${random_password.instance_user_password.result}'", ]
 
   }
 

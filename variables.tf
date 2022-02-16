@@ -2,7 +2,6 @@
 # - Arguments to configure the VMware vSphere Provider
 variable "vultr_api_key" {
   description = "API Key for programmatic access to Vultr"
-  default     = "NBCA5UNLVVJDVZ7AC5DXJBZIYHSLPUMBHPNA"
 }
 
 ##### Instance Parameters
@@ -16,7 +15,7 @@ variable "vultr_instance_region" {
 # see https://api.vultr.com/v2/plans
 variable "vultr_instance_plan" {
   description = "instance size from available VULTR plans"
-  default     = "vc2-2c-4gb" # cloud compute, 1 vCPU, 1 GB
+  default     = "vc2-1c-1gb" # cloud compute, 1 vCPU, 1 GB
 }
 
 # see https://api.vultr.com/v2/os
@@ -40,5 +39,5 @@ variable "instance_prefix" {
 # Amount of instances
 variable "instance_count" {
   description = "amount of instances to create"
-  default     = "2"
+  default     = "1"
 }
